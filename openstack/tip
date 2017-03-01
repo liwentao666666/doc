@@ -1,0 +1,1 @@
+openstack 中的context内容的读取，可以使用context.to_dict()将context中的内容打印出来。
