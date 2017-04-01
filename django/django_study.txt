@@ -1,0 +1,18 @@
+目录结构：
+manage.py:命令行工具脚本
+
+hello_django(project):
+   
+   settings.py:项目配置
+   urls.py:URL配置
+   wsgi.py:WSGI配置
+ 
+
+hello(app):
+    
+    migrations:数据库同步脚本目录
+    admin.py：admin配置
+    apps.py:app配置
+    models.py:模型代码
+    tests.py:单元测试
+    views.py:业务代码
