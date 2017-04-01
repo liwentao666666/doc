@@ -1,0 +1,2 @@
+openstack 中的context内容的读取，可以使用context.to_dict()将context中的内容打印出来。
+rabbitmq:Nova在RabbitMQ的基础上实现了RPC（两种形式：一，request+reponse,二：one way，前者是rpc.call，后者是rpc.cast）。每个nova服务在初始化是都会创建两个队列，其中一个接收的消息的routing key形式是’NODE-TYPE.NODE-ID’，例如compute.gb06，另一种routing key形式是‘NODE-TYPE’，例如compute。当API请求需要路由到具体的节点时，则发送消息到前者类型的队列。
