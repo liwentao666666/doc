@@ -1,0 +1,102 @@
+
+Default settings
+django/conf/global_settings.py
+
+admonition:: Projects vs. apps： 
+What's the difference between a project and an app? An app is a Web
+application that does something -- e.g., a Weblog system, a database of
+public records or a simple poll app. A project is a collection of
+configuration and apps for a particular website. A project can contain
+multiple apps. An app can be in multiple projects.
+
+remember the three-step guide to making model changes:
+Change your models (in ``models.py``).
+Run :djadmin:`python manage.py makemigrations <makemigrations>` to create
+migrations for those changes
+Run :djadmin:`python manage.py migrate <migrate>` to apply those changes to
+the database.
+
+总学习目标：第一节课程
+
+
+4.django-admin.py&manage.py
+django-admin.py是Django的一个用于管理任务的命令行工具，manage.py是对django-admin.py的简单包装，每个Django Project里面都会包含一个manage.py
+语法：
+root@computer0:/home/django_proctise/youtube_train/hello_django# python manage.py 
+
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[django]
+    check：检查django项目完整性
+    compilemessages：编译语言文件
+    createcachetable
+    dbshell：进入django dbshell
+    diffsettings
+    dumpdata
+    flush：清空数据库
+    inspectdb
+    loaddata
+    makemessages：创建语言文件
+    makemigrations：生成数据库同步脚本
+    migrate：同步数据库
+    sendtestemail
+    shell：进入Django shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp：创建一个app
+    startproject：创建一个项目
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver
+
+5.快速创建一个页面
+本课学习目标：
+10分钟快速搭建一个查询用户列表的页面。
+
+第一步，在views.py里面定义一个业务请求处理的函数
+第二步，定义一个模板并引入静态文件
+第三步，在urls.py里面定义url地址
+第四步，启动服务
+第五步，把用户数据查询出来并渲染到页面上
+
+课后思考：
+1.目前模板和静态文件都是放在app的目录下面的，如果我想把模板目录和静态文件放到项目根目录下怎么做？
+2.目前我app的url是直接定义在工程目录下的urls.py下面的，我想定义到app下面的urls.py可以怎么做？
+3.想想模板渲染的过程，静态文件引入的标签最终变成了什么
+
+目录结构：
+manage.py:命令行工具脚本
+
+hello_django(project):
+
+settings.py:项目配置
+urls.py:URL配置
+wsgl.py:WSGI配置
+
+
+hello(app):
+
+migrations：数据库同步脚本目录
+admin.py:admin配置
+apps.py:app配置
+models.py:模型代码
+tests.py:单元测试
+views.py：业务代码
+
+
